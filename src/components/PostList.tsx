@@ -1,26 +1,31 @@
-import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
-const PostList = ({ posts }: { posts: Array<{ id: string; title: string; snippet: string; image: string }> }) => {
+type Post = {
+  id: string;
+  title: string;
+  snippet: string;
+  image: string;
+};
+
+const PostList: React.FC<{ posts: Post[] }> = ({ posts }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {posts.map((post) => (
-        <div key={post.id} className="border rounded-lg overflow-hidden shadow-lg">
-          <Image
-            src={post.image}
-            alt={post.title}
-            width={400}
-            height={250}
-            className="w-full h-48 object-cover"
-          />
-          <div className="p-4">
-            <h3 className="text-xl font-semibold">{post.title}</h3>
-            <p className="text-gray-600 mt-2">{post.snippet}</p>
-            <Link href={`/posts/${post.id}`}
-              className="text-blue-500 mt-4 inline-block">Read more...
-            </Link>
-          </div>
+        <div
+          key={post.id}
+          className="border p-4 rounded-md shadow-md bg-white transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:bg-gray-50"
+        >
+          <Link href={`/posts/${post.id}`}>
+            <Image
+              src={post.image}
+              alt={post.title}
+              className="w-full h-64 object-cover rounded-md cursor-pointer transform transition duration-300 ease-in-out hover:scale-110"
+            />
+          </Link>
+          <h2 className="text-xl font-bold mt-4">{post.title}</h2>
+          <p className="text-gray-700 mt-2">{post.snippet}</p>
         </div>
       ))}
     </div>

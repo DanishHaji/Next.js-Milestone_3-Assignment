@@ -1,44 +1,46 @@
-import Header from "@/components/Header";
-import Banner from "@/components/Banner";
-import HeroSection from "@/components/HeroSection";
-import TrustedBySection from "@/components/TrustedBySection";
-import PostList from "@/components/PostList";
+import React from 'react';
+import Banner from '@/components/Banner';
+import HeroSection from '@/components/HeroSection';
+import TrustedBySection from '@/components/TrustedBySection';
+import PostList from '@/components/PostList';
 
-
-const post = [
+const HomePage = () => {
+  // Mock posts to display in the PostList
+  const mockPosts = [
     {
-        id:'1',
-        title: 'The Girl from Ipanema',
-        image: '/b1.png',
-        snippet:'Strolling down the sun-drenched beaches of Rio de Janeiro....',
+      id: '1',
+      title: 'The Girl from Ipanema',
+      snippet: 'The Girl from Ipanema is more than a...',
+      image: '/b1.png',
     },
     {
-        id:'2',
-        title: 'The Mexico Diary, Day 1: Oaxaca',
-        image: '/b2.png',
-        snippet:'Our adventure in Oaxaca began with an explosion of colors, flavors, and history....',
+      id: '2',
+      title: 'The Mexico Diary, Day 1',
+      snippet: 'Oaxaca—an enchanting city that feels like...',
+      image: '/b2.png',
     },
     {
-        id:'3',
-        title: 'Mykonos with Mr. & Mrs. Smith',
-        image: '/b3.png',
-        snippet:'When it comes to luxury escapes, few places rival Mykonos....',
+      id: '3',
+      title: 'Mykonos with Mr. & Mrs. Smith',
+      snippet: 'Mykonos is a dream, and when explored with...',
+      image: '/b3.png',
     },
-];
+  ];
 
-export default function Home () {
-    return (
-        <div>
-            <Header />
-            <Banner />
-            <HeroSection />
-            <TrustedBySection />
-            {/* Add the PostList component */}
-            <div className="container mx-auto p-6">
-                <h1 className="text-3xl font-bold mb-6">Latest Blogs...</h1>
-                <PostList posts={post} />
-            </div>
+  return (
+    <div>
+      {/* Top sections */}
+      <Banner />
+      <HeroSection />
+      <TrustedBySection />
 
-        </div>
-    )
-}
+      {/* Blog Posts section */}
+      <div className="container mx-auto p-6">
+        <h1 className="text-3xl font-bold mb-6">Latest Blogs...</h1>
+        <PostList posts={mockPosts} />
+      </div>
+    </div>
+  );
+};
+
+export default HomePage;
