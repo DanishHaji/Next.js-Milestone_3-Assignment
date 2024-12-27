@@ -48,7 +48,6 @@ const Footer = () => {
             alt="About Me"
             width={150}
             height={150}
-            layout='intrinsic'
             quality={90}
             className="w-36 h-36 sm:w-48 sm:h-48 rounded-full bg-white object-cover mx-auto sm:mx-0"
           />

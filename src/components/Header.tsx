@@ -27,7 +27,6 @@ const Header = () => {
           <nav className='hidden md:flex space-x-20 font-sans text-xl'>
             <Link href="/" className='text-white hover:text-yellow-400'>Home</Link>
             <Link href="/about" className='text-white hover:text-yellow-400'>About</Link>
-            <Link href="/videos" className='text-white hover:text-yellow-400'>Videos</Link>
           </nav>
 
           {/* Right: Icons */}
@@ -63,7 +62,6 @@ const Header = () => {
           <nav className='md:hidden flex flex-col justify-center space-y-4 mt-4 px-6 items-center'>
             <Link href="/" className='text-white hover:text-yellow-400'>Home</Link>
             <Link href="/about" className='text-white hover:text-yellow-400'>About</Link>
-            <Link href="/video" className='text-white hover:text-yellow-400'>Videos</Link>
             <div className='flex space-x-6'>
               <Link href="https://www.facebook.com/" className='text-white hover:text-yellow-400'>
                 <FaFacebookF />

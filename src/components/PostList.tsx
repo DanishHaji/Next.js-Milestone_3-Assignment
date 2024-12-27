@@ -21,6 +21,8 @@ const PostList: React.FC<{ posts: Post[] }> = ({ posts }) => {
             <Image
               src={post.image}
               alt={post.title}
+              width={800}
+              height={400}
               className="w-full h-64 object-cover rounded-md cursor-pointer transform transition duration-300 ease-in-out hover:scale-110"
             />
           </Link>
